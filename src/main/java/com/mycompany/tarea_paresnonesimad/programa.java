@@ -48,19 +48,18 @@ public class programa {
                     } while (eleccionJuego < 1 || eleccionJuego > 3);
                     switch (eleccionJuego) {
                         case 1:
-                            System.out.println("¿Quien va a empezar?\n Escribe el nombre del jugador 1");
+                            teclado.nextLine();
+                            System.out.println("¿Quien va a empezar?\nEscribe el nombre del jugador 1");
                             nombreJugador1 = teclado.nextLine();
                             System.out.println("Escribe el nombre del jugador 2");
                             nombreJugador2 = teclado.nextLine();
                             do {
                                 System.out.println(nombreJugador1 + " elige pares o nones");
                                 eleccionJugador = teclado.nextLine();
-                            } while (!eleccionJugador.equalsIgnoreCase("pares") || !eleccionJugador.equalsIgnoreCase("nones"));
-                          
-                            
-                            
+                            } while (!(eleccionJugador.equalsIgnoreCase("pares")) || !(eleccionJugador.equalsIgnoreCase("nones")));
+
                             if (eleccionJugador.equalsIgnoreCase("pares")) {
-                                
+
                             }
 
                             break;
