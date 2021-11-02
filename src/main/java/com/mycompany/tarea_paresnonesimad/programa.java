@@ -24,6 +24,8 @@ public class programa {
         int dedosJugador2;
         int aleatorioEmpezar;
         boolean repeticion = true;
+        boolean acceso = true;
+
         //Declaracion de objetos
         Scanner teclado = new Scanner(System.in);
         Random aleatorio = new Random();
@@ -56,11 +58,10 @@ public class programa {
                             do {
                                 System.out.println(nombreJugador1 + " elige pares o nones");
                                 eleccionJugador = teclado.nextLine();
-                            } while (!(eleccionJugador.equalsIgnoreCase("pares")) || !(eleccionJugador.equalsIgnoreCase("nones")));
-
-                            if (eleccionJugador.equalsIgnoreCase("pares")) {
-
-                            }
+                                if (eleccionJugador.equalsIgnoreCase("pares") || (eleccionJugador.equalsIgnoreCase("nones"))) {
+                                    acceso = false;
+                                }
+                            } while (acceso);
 
                             break;
                         case 2:
