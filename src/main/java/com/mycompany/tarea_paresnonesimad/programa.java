@@ -123,14 +123,16 @@ public class programa {
                                     acceso = true;
                                 }
                             } while (acceso);
+                            //Bucle do while que asgura qu saquen los dedos de la mano
+                            //el orden de introducir los dedos no influye ya que deben de sacar los dedos a la
                             do {
-                                System.out.println(nombreJugador1 + " empieza, procede a sacar los dedos");
+                                System.out.println(nombreJugador1 + " ,proceda a sacar los dedos");
                                 dedosJugador1 = teclado.nextInt();
 
                             } while (dedosJugador1 < 0 || dedosJugador1 > 10);
 
                             do {
-                                System.out.println(nombreJugador2 + " empieza, procede a sacar los dedos");
+                                System.out.println(nombreJugador2 + " ,proceda a sacar los dedos");
                                 dedosJugador2 = teclado.nextInt();
                             } while (dedosJugador2 < 0 || dedosJugador2 > 10);
                             sumaDedos = dedosJugador2 + dedosJugador1;
@@ -149,6 +151,7 @@ public class programa {
                     break;
                 case 2:
                     System.out.println("Escribe el nombre del jugador 1");
+                    teclado.nextLine();
                     nombreJugador1 = teclado.nextLine();
 
                     do {
@@ -170,10 +173,8 @@ public class programa {
                     //bucle do while que contra la introduccion correcta de los rangos
                     aleatorioMaquina = aleatorio.nextInt(11);
 
-                   // do {
-                        System.out.println("La maquina procede a sacar los dedos " +aleatorioMaquina);
-                        //dedosJugador2 = teclado.nextInt();
-                   // } while (dedosJugador2 < 0 || dedosJugador2 > 10);
+                    System.out.println("La maquina procede a sacar los dedos " + aleatorioMaquina);
+
                     sumaDedos = aleatorioMaquina + dedosJugador1;
                     System.out.println("La suma de los dedos sacado es " + sumaDedos);
                     //Condicion que controla si es pares o nones, si el resto es igual a 0 es par
