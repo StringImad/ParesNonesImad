@@ -19,9 +19,12 @@ public class programa {
         int eleccionJuego = 0;
         String nombreJugador1;
         String nombreJugador2;
+        int aleatorioEmpezar;
         boolean repeticion = true;
         //Declaracion de objetos
         Scanner teclado = new Scanner(System.in);
+        Random aleatorio = new Random();
+
         //Bucle de repeticion del programa se repite hasta que el usuario le de a salir
         do {
             //Bucle do que asegura la introduccion correcta de los datos del menu
@@ -48,6 +51,12 @@ public class programa {
                             nombreJugador2 = teclado.nextLine();
                             break;
                         case 2:
+                            System.out.println("Escribe el nombre del jugador 1");
+                            nombreJugador1 = teclado.nextLine();
+                            System.out.println("Escribe el nombre del jugador 2");
+                            nombreJugador2 = teclado.nextLine();
+                            aleatorioEmpezar = aleatorio.nextInt(2 - 1 + 1) + 2;
+                            System.out.println("Empieza el jugador: " + aleatorioEmpezar);
 
                             break;
                         case 3:
