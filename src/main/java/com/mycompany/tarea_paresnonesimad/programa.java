@@ -69,18 +69,18 @@ public class programa {
                                 System.out.println(nombreJugador1 + " empieza, procede a sacar los dedos");
                                 dedosJugador1 = teclado.nextInt();
 
-                            } while (dedosJugador1 < 0 || dedosJugador1 > 12);
+                            } while (dedosJugador1 < 0 || dedosJugador1 > 10);
 
                             do {
                                 System.out.println(nombreJugador2 + " empieza, procede a sacar los dedos");
                                 dedosJugador2 = teclado.nextInt();
-                            } while (dedosJugador2 < 0 || dedosJugador2 > 12);
+                            } while (dedosJugador2 < 0 || dedosJugador2 > 10);
                             sumaDedos = dedosJugador2 + dedosJugador1;
                             System.out.println("La suma de los dedos sacado es "+sumaDedos);
                             if(sumaDedos%2==0){
                                 System.out.println("Ganan pares");
                             }else{
-                                System.out.println("Ganan impares");
+                                System.out.println("Ganan nones");
                             }
                             break;
                         case 2:
@@ -90,11 +90,22 @@ public class programa {
                             System.out.println("Escribe el nombre del jugador 2");
                             nombreJugador2 = teclado.nextLine();
                             aleatorioEmpezar = aleatorio.nextInt(2 - 1 + 1) + 2;
-                            if (aleatorioEmpezar == 1) {
+                            
+                            if (aleatorioEmpezar == 1 ) {
                                 System.out.println("Empieza el jugador: " + nombreJugador1);
                             } else {
                                 System.out.println("Empieza el jugador: " + nombreJugador2);
                             }
+                            
+                            do {
+                                System.out.println(nombreJugador1 + " elige pares o nones");
+                                eleccionJugador = teclado.nextLine();
+                                if (eleccionJugador.equalsIgnoreCase("pares") || (eleccionJugador.equalsIgnoreCase("nones"))) {
+                                    acceso = false;
+                                } else {
+                                    acceso = true;
+                                }
+                            } while (acceso);
 
                             break;
                         case 3:
