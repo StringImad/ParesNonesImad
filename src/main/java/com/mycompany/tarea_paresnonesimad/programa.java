@@ -19,6 +19,9 @@ public class programa {
         int eleccionJuego = 0;
         String nombreJugador1;
         String nombreJugador2;
+        String eleccionJugador;
+        int dedosJugador1;
+        int dedosJugador2;
         int aleatorioEmpezar;
         boolean repeticion = true;
         //Declaracion de objetos
@@ -49,6 +52,17 @@ public class programa {
                             nombreJugador1 = teclado.nextLine();
                             System.out.println("Escribe el nombre del jugador 2");
                             nombreJugador2 = teclado.nextLine();
+                            do {
+                                System.out.println(nombreJugador1 + " elige pares o nones");
+                                eleccionJugador = teclado.nextLine();
+                            } while (!eleccionJugador.equalsIgnoreCase("pares") || !eleccionJugador.equalsIgnoreCase("nones"));
+                          
+                            
+                            
+                            if (eleccionJugador.equalsIgnoreCase("pares")) {
+                                
+                            }
+
                             break;
                         case 2:
                             System.out.println("Escribe el nombre del jugador 1");
@@ -59,10 +73,8 @@ public class programa {
                             aleatorioEmpezar = aleatorio.nextInt(2 - 1 + 1) + 2;
                             if (aleatorioEmpezar == 1) {
                                 System.out.println("Empieza el jugador: " + nombreJugador1);
-
                             } else {
                                 System.out.println("Empieza el jugador: " + nombreJugador2);
-
                             }
 
                             break;
