@@ -17,7 +17,8 @@ public class programa {
         //Declaracion de variables
         int eleccion = 0;
         int eleccionJuego = 0;
-
+        String nombreJugador1;
+        String nombreJugador2;
         boolean repeticion = true;
         //Declaracion de objetos
         Scanner teclado = new Scanner(System.in);
@@ -41,7 +42,10 @@ public class programa {
                     } while (eleccionJuego < 1 || eleccionJuego > 3);
                     switch (eleccionJuego) {
                         case 1:
-                            System.out.println("¿Quien va a empezar?");
+                            System.out.println("¿Quien va a empezar?\n Escribe el nombre del jugador 1");
+                            nombreJugador1 = teclado.nextLine();
+                            System.out.println("Escribe el nombre del jugador 2");
+                            nombreJugador2 = teclado.nextLine();
                             break;
                         case 2:
 
