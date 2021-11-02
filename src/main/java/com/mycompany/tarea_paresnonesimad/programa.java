@@ -12,9 +12,12 @@ import java.util.Scanner;
  * @author imad
  */
 public class programa {
+
     public static void main(String[] args) {
         //Declaracion de variables
         int eleccion = 0;
+        int eleccionJuego = 0;
+
         boolean repeticion = true;
         //Declaracion de objetos
         Scanner teclado = new Scanner(System.in);
@@ -29,10 +32,27 @@ public class programa {
             } while (eleccion < 1 || eleccion > 3);
             switch (eleccion) {
                 case 1:
-         
+                    do {
+                        System.out.println("Elige una de las opciones del menu\n1.- Eleccion manual\n"
+                                + "2.- Eleccion Aleatoria\n"
+                                + "3.- Salir");
+                        eleccionJuego = teclado.nextInt();
+
+                    } while (eleccionJuego < 1 || eleccionJuego > 3);
+                    switch (eleccionJuego) {
+                        case 1:
+                            System.out.println("¿Quien va a empezar?");
+                            break;
+                        case 2:
+
+                            break;
+                        case 3:
+                            repeticion = false;
+                            break;
+                    }
                     break;
                 case 2:
-           
+
                     break;
                 case 3:
                     repeticion = false;
@@ -41,5 +61,4 @@ public class programa {
 
         } while (repeticion);
     }
-    }
-
+}
