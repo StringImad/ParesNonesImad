@@ -71,6 +71,17 @@ public class programa {
 
                             } while (dedosJugador1 < 0 || dedosJugador1 > 12);
 
+                            do {
+                                System.out.println(nombreJugador2 + " empieza, procede a sacar los dedos");
+                                dedosJugador2 = teclado.nextInt();
+                            } while (dedosJugador2 < 0 || dedosJugador2 > 12);
+                            sumaDedos = dedosJugador2 + dedosJugador1;
+                            System.out.println("La suma de los dedos sacado es "+sumaDedos);
+                            if(sumaDedos%2==0){
+                                System.out.println("Ganan pares");
+                            }else{
+                                System.out.println("Ganan impares");
+                            }
                             break;
                         case 2:
                             System.out.println("Escribe el nombre del jugador 1");
