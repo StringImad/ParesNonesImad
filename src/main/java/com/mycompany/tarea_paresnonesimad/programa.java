@@ -19,6 +19,7 @@ public class programa {
         int eleccionJuego = 0;
         String nombreJugador1;
         String nombreJugador2;
+        String nombre;
         String eleccionJugador;
         int dedosJugador1;
         int dedosJugador2;
@@ -99,16 +100,19 @@ public class programa {
 
                             do {
                                 if (aleatorioEmpezar == 1) {
-                                    System.out.println(nombreJugador1 + " elige pares o nones");
-                                    eleccionJugador = teclado.nextLine();
-                                    if (eleccionJugador.equalsIgnoreCase("pares") || (eleccionJugador.equalsIgnoreCase("nones"))) {
-                                        acceso = false;
-                                    } else {
-                                        acceso = true;
-                                    }
+                                    nombre = nombreJugador1;
+                                } else {
+                                    nombre = nombreJugador2;
                                 }
-
+                                System.out.println(nombre + " elige pares o nones");
+                                eleccionJugador = teclado.nextLine();
+                                if (eleccionJugador.equalsIgnoreCase("pares") || (eleccionJugador.equalsIgnoreCase("nones"))) {
+                                    acceso = false;
+                                } else {
+                                    acceso = true;
+                                }
                             } while (acceso);
+                            
 
                             break;
                         case 3:
