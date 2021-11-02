@@ -22,6 +22,7 @@ public class programa {
         String eleccionJugador;
         int dedosJugador1;
         int dedosJugador2;
+        int sumaDedos;
         int aleatorioEmpezar;
         boolean repeticion = true;
         boolean acceso = true;
@@ -35,7 +36,7 @@ public class programa {
             //Bucle do que asegura la introduccion correcta de los datos del menu
             do {
                 System.out.println("Elige una de las opciones del menu\n1.- 1 vs 1\n"
-                        + "2.- 1 1 vs maquina\n"
+                        + "2.- 1 vs maquina\n"
                         + "3.- Salir");
                 eleccion = teclado.nextInt();
             } while (eleccion < 1 || eleccion > 3);
@@ -60,8 +61,15 @@ public class programa {
                                 eleccionJugador = teclado.nextLine();
                                 if (eleccionJugador.equalsIgnoreCase("pares") || (eleccionJugador.equalsIgnoreCase("nones"))) {
                                     acceso = false;
+                                } else {
+                                    acceso = true;
                                 }
                             } while (acceso);
+                            do {
+                                System.out.println(nombreJugador1 + " empieza, procede a sacar los dedos");
+                                dedosJugador1 = teclado.nextInt();
+
+                            } while (dedosJugador1 < 0 || dedosJugador1 > 12);
 
                             break;
                         case 2:
