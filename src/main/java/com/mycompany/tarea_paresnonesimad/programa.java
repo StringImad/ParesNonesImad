@@ -52,11 +52,18 @@ public class programa {
                             break;
                         case 2:
                             System.out.println("Escribe el nombre del jugador 1");
+                            teclado.nextLine();
                             nombreJugador1 = teclado.nextLine();
                             System.out.println("Escribe el nombre del jugador 2");
                             nombreJugador2 = teclado.nextLine();
                             aleatorioEmpezar = aleatorio.nextInt(2 - 1 + 1) + 2;
-                            System.out.println("Empieza el jugador: " + aleatorioEmpezar);
+                            if (aleatorioEmpezar == 1) {
+                                System.out.println("Empieza el jugador: " + nombreJugador1);
+
+                            } else {
+                                System.out.println("Empieza el jugador: " + nombreJugador2);
+
+                            }
 
                             break;
                         case 3:
