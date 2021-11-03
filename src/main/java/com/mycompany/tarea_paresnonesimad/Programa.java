@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author imad
  */
-public class programa {
+public class Programa {
 
     public static void main(String[] args) {
         //Declaracion de variables
@@ -59,7 +59,8 @@ public class programa {
                         case 1:
                             //Limpiamos el buffer al pasar de int a line
                             teclado.nextLine();
-                            System.out.println("¿Quien va a empezar?\nEscribe el nombre del jugador 1");
+                            System.out.println("¿Quien va a empezar?\n"
+                                    + "Escribe el nombre del jugador 1");
                             nombreJugador1 = teclado.nextLine();
                             System.out.println("Escribe el nombre del jugador 2");
                             nombreJugador2 = teclado.nextLine();
