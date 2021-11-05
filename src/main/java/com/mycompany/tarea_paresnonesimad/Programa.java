@@ -4,6 +4,7 @@
  */
 package com.mycompany.tarea_paresnonesimad;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -21,8 +22,9 @@ public class Programa {
         String nombreJugador2;
         String nombre;
         String eleccionJugador;
-        int dedosJugador1;
-        int dedosJugador2;
+        String eleccionJugadorNombre;
+        int dedosJugador1 = 0;
+        int dedosJugador2 = 0;
         int sumaDedos;
         int aleatorioEmpezar;
         int aleatorioMaquina;
@@ -40,7 +42,13 @@ public class Programa {
                 System.out.println("Elige una de las opciones del menu\n1.- 1 vs 1\n"
                         + "2.- 1 vs maquina\n"
                         + "3.- Salir");
-                eleccion = teclado.nextInt();
+                try {
+                    eleccion = teclado.nextInt();
+                } catch (InputMismatchException IME) {
+                    System.out.println("Solo admite numeros del 1 al 3");
+                    teclado.nextLine();
+                }
+
             } while (eleccion < 1 || eleccion > 3);
             //Estructura de seleccion para elegir el modo de juego ( 1 contra 1 , 1 vs maquina o salir)
             switch (eleccion) {
@@ -50,8 +58,12 @@ public class Programa {
                         System.out.println("Elige una de las opciones del menu\n1.- Eleccion manual\n"
                                 + "2.- Eleccion Aleatoria\n"
                                 + "3.- Salir");
-                        eleccionJuego = teclado.nextInt();
-
+                        try {
+                            eleccionJuego = teclado.nextInt();
+                        } catch (InputMismatchException IME) {
+                            System.out.println("Solo admite numeros del 1 al 3");
+                            teclado.nextLine();
+                        }
                     } while (eleccionJuego < 1 || eleccionJuego > 3);
 
                     //Estructura de seleccion para elegir el modo de juego ( manual, Aleatorio o salir)
@@ -70,29 +82,42 @@ public class Programa {
                                 eleccionJugador = teclado.nextLine();
                                 //Condicion que hace que el programa se repita hasta que el jugador introduzca los datos correctamente 
                                 if (eleccionJugador.equalsIgnoreCase("pares") || (eleccionJugador.equalsIgnoreCase("nones"))) {
+                                    eleccionJugadorNombre = nombreJugador1 + " pares";
                                     acceso = false;
                                 } else {
+                                    eleccionJugadorNombre = nombreJugador1 + " nones";
+
                                     acceso = true;
                                 }
                             } while (acceso);
                             //bucle do while que contra la introduccion correcta de los rangos
                             do {
-                                System.out.println(nombreJugador1 + " empieza, procede a sacar los dedos");
-                                dedosJugador1 = teclado.nextInt();
-
+                                try {
+                                    System.out.println(nombreJugador1 + " empieza, procede a sacar los dedos");
+                                    dedosJugador1 = teclado.nextInt();
+                                } catch (InputMismatchException IME) {
+                                    System.out.println("Solo admite numeros del 0 al 10");
+                                    teclado.nextLine();
+                                }
                             } while (dedosJugador1 < 0 || dedosJugador1 > 10);
                             //bucle do while que contra la introduccion correcta de los rangos
                             do {
-                                System.out.println(nombreJugador2 + " empieza, procede a sacar los dedos");
-                                dedosJugador2 = teclado.nextInt();
+                                try {
+                                    System.out.println(nombreJugador2 + " empieza, procede a sacar los dedos");
+                                    dedosJugador2 = teclado.nextInt();
+                                } catch (InputMismatchException IME) {
+                                    System.out.println("Solo admite numeros del 0 al 10");
+                                    teclado.nextLine();
+                                }
                             } while (dedosJugador2 < 0 || dedosJugador2 > 10);
                             sumaDedos = dedosJugador2 + dedosJugador1;
                             System.out.println("La suma de los dedos sacado es " + sumaDedos);
                             //Condicion que controla si es pares o nones, si el resto es igual a 0 es par
-                            if (sumaDedos % 2 == 0) {
-                                System.out.println("Ganan pares");
-                            } else {
-                                System.out.println("Ganan nones");
+                            if ((dedosJugador1 + dedosJugador2) % 2 == 0 && eleccionJugadorNombre.contains("pares")
+                                    || eleccionJugadorNombre.contains("nones") && (dedosJugador1 + dedosJugador2) % 2 != 0) {
+                                System.out.println("Gana: " + nombreJugador1);
+                            }else{
+                                System.out.println("Gana: "+ nombreJugador2);
                             }
                             break;
                         case 2:
